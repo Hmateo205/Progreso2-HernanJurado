@@ -37,15 +37,15 @@ public partial class Recaga_Telefonica : ContentPage
         bool confirm = await DisplayAlert("Confirmación", $"¿Desea recargar ${Cantidad} en el número {NumeroTelefonico}?", "Sí", "No");
         if (confirm)
         {
-            await RealizarRecargaAsync(NumeroTelefonico, Cantidad);
+            await RealizarRecargaAsync(NumeroTelefonico, Operadora, Cantidad);
         }
     }
 
-    private async Task RealizarRecargaAsync(string NumeroTelefonico, int amount)
+    private async Task RealizarRecargaAsync(string NumeroTelefonico,string Operadora, int cantidad)
     {
         string date = DateTime.Now.ToString("dd/MM/yyyy");
         string fileName = $"{NumeroTelefonico}.txt";
-        string content = $"Se hizo una recarga de ${amount} el; {date}";
+        string content = $"Se realizo una recarga de$ {cantidad} en {Operadora} al numero {NumeroTelefonico} el {date}";
 
         // Guardar archivo en el dispositivo
         string folderPath = @"C:\Users\ASUS GAMING\source\repos\Progreso-2-HernanJurado\Recargas-Historial";
@@ -53,7 +53,7 @@ public partial class Recaga_Telefonica : ContentPage
         File.WriteAllText(filePath, content);
 
         // Mostrar mensaje de confirmación
-        await DisplayAlert("Recarga Exitosa!!", $"Se ha recargado ${amount} a {NumeroTelefonico}.", "OK");
+        await DisplayAlert("Recarga Exitosa!!", $"Se ha recargado ${cantidad} a {NumeroTelefonico}.", "OK");
     }
 }
 
