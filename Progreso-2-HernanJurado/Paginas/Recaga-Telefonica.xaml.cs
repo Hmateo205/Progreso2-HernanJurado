@@ -11,15 +11,15 @@ public partial class Recaga_Telefonica : ContentPage
 		InitializeComponent();
 	}
 
-    private int selectedAmount = 0;
+    private int Cantidad = 0;
 
     private void OnCantidadChanged(object sender, CheckedChangedEventArgs e)
     {
         if (e.Value)
         {
             var radioButton = sender as RadioButton;
-            selectedAmount = int.Parse(radioButton.Content.ToString().Trim('$'));
-            DisplayAlert("Monto Seleccionado", $"Se seleccionó una recarga de ${selectedAmount}", "OK");
+            Cantidad = int.Parse(radioButton.Content.ToString().Trim('$'));
+            DisplayAlert("Cantidad seleccionada", $"Se seleccionó una recarga de ${Cantidad}", "OK");
         }
     }
 
@@ -28,16 +28,16 @@ public partial class Recaga_Telefonica : ContentPage
         string NumeroTelefonico = HJNumero.Text;
         string Operadora = HJOperador.SelectedItem?.ToString();
 
-        if (string.IsNullOrEmpty(NumeroTelefonico) || Operadora == null || selectedAmount == 0)
+        if (string.IsNullOrEmpty(NumeroTelefonico) || Operadora == null || Cantidad == 0)
         {
-            await DisplayAlert("Error", "Por favor complete todos los campos antes de continuar.", "OK");
+            await DisplayAlert("Error!!", "Coplete todo antes de continuar", "OK");
             return;
         }
 
-        bool confirm = await DisplayAlert("Confirmación", $"¿Desea recargar ${selectedAmount} en el número {NumeroTelefonico}?", "Sí", "No");
+        bool confirm = await DisplayAlert("Confirmación", $"¿Desea recargar ${Cantidad} en el número {NumeroTelefonico}?", "Sí", "No");
         if (confirm)
         {
-            await RealizarRecargaAsync(NumeroTelefonico, selectedAmount);
+            await RealizarRecargaAsync(NumeroTelefonico, Cantidad);
         }
     }
 
@@ -53,7 +53,7 @@ public partial class Recaga_Telefonica : ContentPage
         File.WriteAllText(filePath, content);
 
         // Mostrar mensaje de confirmación
-        await DisplayAlert("Recarga Exitosa", $"Se ha recargado ${amount} a {NumeroTelefonico}.", "OK");
+        await DisplayAlert("Recarga Exitosa!!", $"Se ha recargado ${amount} a {NumeroTelefonico}.", "OK");
     }
 }
 
