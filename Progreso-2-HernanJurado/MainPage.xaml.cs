@@ -17,6 +17,7 @@
         {
             Navigation.PushAsync(new Paginas.Recargas_Realizadas());
         }
+
     }
 
 }
