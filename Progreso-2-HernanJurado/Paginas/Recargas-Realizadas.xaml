@@ -11,15 +11,11 @@
                 <DataTemplate>
                     <TextCell Text="{Binding}" />
                 </DataTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="FillAndExpand" />
-                    </StackLayout>
-                </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
 
 </ContentPage>
+<BoxView HeightRequest="1" BackgroundColor="Beige" HorizontalOptions="FillAndExpand" />
 
     
