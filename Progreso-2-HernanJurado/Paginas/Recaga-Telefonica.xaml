@@ -10,6 +10,7 @@
         <!-- Entrada del número telefónico -->
         <Entry x:Name="HJNumero" 
                Placeholder="Ingrese el numero de telefono" 
+               PlaceholderColor="Gray"
                Keyboard="Telephone" />
 
         <!-- Selección del operador telefónico -->
@@ -43,8 +44,9 @@
 
         <!-- Botón para realizar la recarga -->
         <Button Text="Cofirmar" 
-                Clicked="OnConfirmarClicked" 
-                />
+                Clicked="OnConfirmarClicked"
+                TextColor="Black"
+                BackgroundColor="Beige"/>
 
     </StackLayout>
 </ContentPage>

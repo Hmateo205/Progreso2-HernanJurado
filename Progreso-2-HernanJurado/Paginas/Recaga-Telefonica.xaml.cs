@@ -48,7 +48,8 @@ public partial class Recaga_Telefonica : ContentPage
         string content = $"Se hizo una recarga de ${amount} dólares en la siguiente fecha; {date}";
 
         // Guardar archivo en el dispositivo
-        string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), fileName);
+        string folderPath = @"C:\Users\ASUS GAMING\source\repos\Progreso-2-HernanJurado";
+        string filePath = Path.Combine(folderPath, fileName);
         File.WriteAllText(filePath, content);
 
         // Mostrar mensaje de confirmación
