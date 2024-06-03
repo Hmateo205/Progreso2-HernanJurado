@@ -2,11 +2,53 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Progreso_2_HernanJurado.Paginas.Recaga_Telefonica"
-             Title="Recaga_Telefonica">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Recaga_Telefonica"
+             Background="DarkOliveGreen">
+
+
+    <StackLayout Padding="10">
+        <!-- Entrada del número telefónico -->
+        <Entry x:Name="HJNumero" 
+               Placeholder="Ingrese el numero de telefono" 
+               Keyboard="Telephone" />
+
+        <!-- Selección del operador telefónico -->
+        <Label Text="Seleccione el operador:" />
+        <Picker x:Name="HJOperador">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Movistar</x:String>
+                    <x:String>Claro</x:String>
+                    <x:String>Twenty</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Selección del monto de recarga -->
+        <Label Text="Seleccione cuanto desea recargar" />
+        <StackLayout>
+            <RadioButton x:Name="HJButton1" 
+                         Content="$3" 
+                         CheckedChanged="OnCantidadChanged" 
+                         GroupName="$" />
+            <RadioButton x:Name="HJButton2" 
+                         Content="$5" 
+                         CheckedChanged="OnCantidadChanged" 
+                         GroupName="$" />
+            <RadioButton x:Name="HJButton3" 
+                         Content="$10" 
+                         CheckedChanged="OnCantidadChanged" 
+                         GroupName="$" />
+        </StackLayout>
+
+        <!-- Botón para realizar la recarga -->
+        <Button Text="Cofirmar" 
+                Clicked="OnConfirmarClicked" 
+                />
+
+    </StackLayout>
 </ContentPage>
+    
+    
+    
+
