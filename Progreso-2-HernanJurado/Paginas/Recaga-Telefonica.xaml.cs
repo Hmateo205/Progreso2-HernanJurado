@@ -45,10 +45,10 @@ public partial class Recaga_Telefonica : ContentPage
     {
         string date = DateTime.Now.ToString("dd/MM/yyyy");
         string fileName = $"{NumeroTelefonico}.txt";
-        string content = $"Se hizo una recarga de ${amount} dólares en la siguiente fecha; {date}";
+        string content = $"Se hizo una recarga de ${amount} el; {date}";
 
         // Guardar archivo en el dispositivo
-        string folderPath = @"C:\Users\ASUS GAMING\source\repos\Progreso-2-HernanJurado";
+        string folderPath = @"C:\Users\ASUS GAMING\source\repos\Progreso-2-HernanJurado\Recargas-Historial";
         string filePath = Path.Combine(folderPath, fileName);
         File.WriteAllText(filePath, content);
 
