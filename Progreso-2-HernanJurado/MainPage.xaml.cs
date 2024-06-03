@@ -13,6 +13,10 @@
         {
             Navigation.PushAsync(new Paginas.Recaga_Telefonica());
         }
+        private void OnHJBoton2Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Paginas.Recargas_Realizadas());
+        }
     }
 
 }

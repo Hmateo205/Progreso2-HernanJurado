@@ -22,11 +22,20 @@
             FontSize="25"
             HorizontalOptions="Center" />
 
-            <!-- Botón Contador -->
+            <!-- Botón Recargas -->
             <Button
             x:Name="HJBoton1"
             Text="Recargas !!" 
             Clicked="OnHJBoton1Clicked"
+            TextColor="Black"
+            BackgroundColor="Beige"/>
+
+
+            <!-- Botón Historial -->
+            <Button
+            x:Name="HJBoton2"
+            Text="Historial" 
+            Clicked="OnHJBoton2Clicked"
             TextColor="Black"
             BackgroundColor="Beige"/>
 
